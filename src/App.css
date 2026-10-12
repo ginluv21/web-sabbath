@@ -1,0 +1,271 @@
+/* Компоновка наша, базовый контейнер - из NES.css. */
+.builder {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.builder-header {
+  padding: 20px 16px;
+  margin-bottom: 24px;
+  text-align: center;
+  background: linear-gradient(#151550, #08082f);
+  border: 4px ridge #cacbdf;
+}
+
+.system-label {
+  margin: 0 0 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #80ffff;
+}
+
+/* Золото и несколько теней напоминают старый WordArt. */
+.builder-header h1 {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 68px;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 1.2;
+  color: #ffdf3a;
+  text-shadow: 1px 1px 0 #fff6b0, 3px 3px 0 #aa6000,
+    5px 5px 0 #8a19bc, 7px 7px 0 #420568;
+}
+
+.tagline {
+  margin: 16px 0;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.construction-label {
+  display: inline-block;
+  padding: 5px 14px;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  font-weight: bold;
+  color: #000;
+  background-color: #ffe330;
+  border: 3px dashed #000;
+  transform: rotate(-2deg);
+}
+
+.builder-layout {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr) minmax(0, 1fr);
+  gap: 20px;
+}
+
+/* Меняем рамку и палитру готового контейнера NES.css. */
+.builder .workspace-panel {
+  min-width: 0;
+  min-height: 360px;
+  margin: 0;
+  padding: 5px;
+  color: #151539;
+  background-color: #e3e3e9;
+  border: 4px ridge #c8c8d8;
+  box-shadow: 3px 3px 0 #000;
+}
+
+.builder .workspace-panel::after {
+  display: none;
+}
+
+.workspace-panel h2 {
+  margin: 0 0 16px;
+  padding: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(90deg, #000080, #3774c5);
+  border: 2px outset #a3bfe0;
+}
+
+.editor-panel h2 {
+  background: linear-gradient(90deg, #640089, #b443d0);
+}
+
+.preview-panel h2 {
+  background: linear-gradient(90deg, #005454, #26959e);
+}
+
+.panel-number {
+  color: #ffef64;
+}
+
+.panel-note, .empty-message {
+  margin: 0;
+  padding: 0 10px 16px;
+  font-size: 14px;
+}
+
+.empty-message {
+  margin: 0 6px;
+  padding: 16px 10px;
+  color: #454560;
+  background-color: #fffef0;
+  border: 2px inset #b9b9ca;
+}
+
+@media (max-width: 800px) {
+  .builder-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .builder .workspace-panel {
+    min-height: 180px;
+  }
+
+  .builder-header h1 {
+    font-size: 40px;
+  }
+
+  .system-label {
+    letter-spacing: 0;
+  }
+}
+
+/* Статичный маскот рядом с названием, пока без поведения. */
+.brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.mascot-placeholder {
+  flex-shrink: 0;
+  width: 150px;
+  margin: 0;
+  padding: 6px;
+  color: #000;
+  background-color: #fffef0;
+  border: 3px ridge #cacbdf;
+  transform: rotate(3deg);
+}
+
+.mascot-placeholder figcaption {
+  padding: 3px;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  font-weight: bold;
+  background-color: #ffe330;
+  border: 1px dashed #000;
+}
+
+.mascot-placeholder img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 6px 0;
+}
+
+.mascot-placeholder p {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 9px;
+  font-weight: bold;
+}
+
+@media (max-width: 800px) {
+  .brand-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.toolbar-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 12px 16px;
+}
+
+.builder .nes-btn {
+  padding: 6px 8px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.builder .nes-btn:focus-visible {
+  outline: 3px solid #000080;
+  outline-offset: 5px;
+}
+
+.block-editor {
+  margin: 12px 6px;
+  padding: 12px;
+  background-color: #fffef0;
+  border: 2px inset #b9b9ca;
+}
+
+.block-editor label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.block-editor input, .block-editor textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 8px;
+  font: inherit;
+  font-size: 14px;
+  color: #151539;
+  background-color: #fff;
+  border: 2px inset #b9b9ca;
+}
+
+.block-editor textarea {
+  resize: vertical;
+}
+
+.block-editor input:focus-visible, .block-editor textarea:focus-visible {
+  outline: 2px solid #000080;
+}
+
+.block-editor .delete-button {
+  margin-top: 12px;
+}
+
+.page-preview {
+  min-height: 260px;
+  margin: 0 6px 6px;
+  padding: 16px 12px;
+  overflow-wrap: anywhere;
+  background-color: #fffef0;
+  border: 2px inset #b9b9ca;
+}
+
+.page-preview h3 {
+  margin: 0 0 16px;
+  font-size: 22px;
+}
+
+.page-preview p {
+  margin: 0 0 16px;
+  white-space: pre-wrap;
+}
+
+.page-preview .preview-empty {
+  font-size: 14px;
+  color: #454560;
+}
+
+.status-bar {
+  margin: 20px 0 0;
+  padding: 8px 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: #fff;
+  background-color: #151550;
+  border: 2px ridge #cacbdf;
+}

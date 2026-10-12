@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: Arial, sans-serif;
+}
+
+/* Точки разного размера создают повторяющийся звёздный фон. */
+body {
+  margin: 0;
+  padding: 24px 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #151539;
+  background-color: #08082f;
+  background-image:
+    radial-gradient(circle at 18px 22px, #fff 1px, transparent 1.5px),
+    radial-gradient(circle at 90px 70px, #878bd6 1px, transparent 1.5px),
+    radial-gradient(circle at 40px 110px, #ffd781 1px, transparent 2px);
+  background-size: 150px 130px, 190px 180px, 230px 210px;
+  min-height: 100vh;
+  cursor: auto;
+}
+
+a:focus-visible {
+  outline: 2px solid #ffdf3a;
+  outline-offset: 6px;
+}
